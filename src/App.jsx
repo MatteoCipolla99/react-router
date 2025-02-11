@@ -7,6 +7,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import PostDetail from "./pages/PostDetail";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contacts" element={<ContactUs />} />
+          <Route path="/post/:id" element={<PostDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

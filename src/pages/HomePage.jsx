@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function Homepage() {
@@ -16,7 +17,12 @@ export default function Homepage() {
       <p>Scopri gli ultimi articoli e curiosità.</p>
       <div className="posts-wrap">
         {posts.map((post) => (
-          <div key={post.id} className="post-card">
+          <Link
+            to={`/post/${post.id}`}
+            key={post.id}
+            className="post-card"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
             <img src={post.image} alt={post.title} />
             <div className="post-content">
               <h3 className="post-title">{post.title}</h3>
@@ -33,7 +39,7 @@ export default function Homepage() {
                 )}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
